@@ -9,30 +9,25 @@ def cifrar_cesar(mensaje, n):
         # si el caracter es una letra minúscula 
         else: 
             resultado += chr((ord(char) + n - 97) % 26 + 97) 
-  
     return resultado 
 
-# descrifrado cesar funcion
+# decrifrado cesar funcion
 def decifrar_cesar(texto, deslocamento):
     decifrado = ''
-
     for letra in texto:
         if letra.isalpha():
             num = ord(letra) - deslocamento
-
             if num > ord('z'):
                 num -= 26
             elif num < ord('a'):
                 num += 26
-
             decifrado += chr(num)
         else:
             decifrado += letra
-
     return decifrado
 
 
-# Prueba
+# --------------------------------------------------------Prueba
 mensaje = "hola"
 n = 14
 cifrado = cifrar_cesar(mensaje, n)
